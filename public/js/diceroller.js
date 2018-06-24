@@ -10,8 +10,8 @@ $(document).ready(function() {
             data:{
             	  diceNumber: $('#diceNo').val(), 
               	  difficulty: $('#difficulty').val(),
-              	  explode: $('#tenExplode').val(),
-              	  fail: $('#oneFail').val()
+              	  explode: $('#tenExplode').is(':checked'),
+              	  fail: $('#oneFail').is(':checked')
             },
             dataType: 'html',
             success: function(data){
