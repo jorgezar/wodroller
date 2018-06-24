@@ -65,7 +65,7 @@ class WodrollProbability {
     {
         $successes = 0;
         foreach ($roll as $die) {
-            if ( $this->botch == true && $die == 1 ) {
+            if ( $this->botch == 'true' && $die == 1 ) {
                 $successes -= 1;
             } else if ($die >= $this->difficulty) {
                 $successes += 1;
