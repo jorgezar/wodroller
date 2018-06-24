@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\JorgezarDiceRoll\Rolls\Roll;
 use App\JorgezarWodProbability\WodrollProbability;
-use App\Helpers\WodrollHelper;
+use App\Helpers\GraphHelper;
 
 
 class RollController extends Controller
@@ -20,7 +20,7 @@ class RollController extends Controller
     public function roll(Request $request)
     {
         $dice=$difficulty=$explode=$fail=0;
-        // for now we are doing 100 wod d10 rolls
+        // for now we are doing 1000 wod d10 rolls
         $sides = 10;
         $rollsNo = 1000;
         // prepare response for ajax request
@@ -43,28 +43,18 @@ class RollController extends Controller
                 ;
 
             $successMap = $wodroll->executeRolls(); 
+
+            $graphHelper = new GraphHelper($successMap);
+            $results = $graphHelper
+                ->getLineChartData($rollsNo);
             
-            $results = WodrollHelper::decorateResults();
-            
-            $view = view('DiceRoller.results', ['results' => $results]);
-            
-            $response = new Response($view);
-            
-            return $response;
+            return response()->json(array(
+                'labels' => $results['labels'], 
+                'counts' => $results['counts']
+            ));
         }
-//         $pool = new Roll();
-        
-//         // for now we do only d10 rolls
-//         // change this parameter to set number of sides
-//         $type = 10;
-        
-//         $pool->addDiceToPool($type, $diceNumber);
-        
-//         $results = $pool->roll();
-//         //         return $results;
-//         return view('DiceRoller.main')
-//         ->with(
-//             'results', $results
-//             );
+        // if not ajax, just show form here
+        return view('DiceRoller.main');
+
     }
 }
