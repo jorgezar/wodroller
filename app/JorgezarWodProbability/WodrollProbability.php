@@ -18,7 +18,7 @@ class WodrollProbability {
     
     private $results = [];
     
-    private $rollsNo = 10;
+    private $rollsNo = 1000;
     
 //     private $rollsSuccesses = [];
     
@@ -57,7 +57,7 @@ class WodrollProbability {
                 $successMap[$offset] = 1;
             }
         }
-        var_dump($successMap);die();
+
         return $successMap;
     }
     
