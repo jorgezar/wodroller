@@ -42,6 +42,8 @@
 </div>          
     {{Form::submit('Roll!', ['class' => 'btn btn-primary', 'id' => 'rollSubmit'])}}
 {!! Form::close() !!}
-<div id = 'diceroller_results'></div>
+<div id = 'diceroller_results'>
+	<canvas id="chart"></canvas>
+</div>
 @endsection
 
