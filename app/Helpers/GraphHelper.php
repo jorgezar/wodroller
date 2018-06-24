@@ -29,6 +29,7 @@ class GraphHelper
 
         foreach ($this->successMap as $l => $c) {
             $labels[] = $l;
+            // calculate percentage
             $probability = intval($c) / $rollsNo;
             $counts[] = $probability;
         }
