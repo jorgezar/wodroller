@@ -15,36 +15,46 @@ $(document).ready(function() {
             },
             dataType: 'html',
             success: function(data){
+            	var data = JSON.parse(data);
             	console.log('Request OK');
-                console.log(data);
-                $('#diceroller_results').html(data);
+                
+                var chart = drawGraph(data);
+                
+                $('#diceroller_results').html(chart);
+                
             },
             error: function(data){
             	console.log('Request ERROR');
             }
         })
             
-        
-        
-/*        var posting = $.get( url, { 
-      	  diceNumber: $('#diceNo').val(), 
-      	  difficulty: $('#difficulty').val(),
-      	  explode: $('#tenExplode').val(),
-      	  fail: $('#oneFail').val()
-        } );
-        
-        posting.done(function( data ) {
-            alert('success');
-          });
-*/        
     })
 	
-    $("#rollForm").submit(function(event) {
-
-      } )
-
-      /* Alerts the results */
-
-      
-
 });      
+function drawGraph(data) {
+
+	var ctx = document.getElementById("chart");
+
+	ctx.height = 300;
+	var myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+	    labels: data.labels,
+	    datasets: [
+	      { 
+	        data: data.counts
+	      }
+	    ]
+	  },
+		options: {
+		    maintainAspectRatio: false,
+		    title: {
+		    	display: true,
+		    	text: "Wyniki: ",
+		    	position: 'top',
+		    	fontSize: 20,
+		    	fontColor: 'black',
+		    }
+		}
+	});
+}
