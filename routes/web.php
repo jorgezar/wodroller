@@ -21,3 +21,5 @@ Route::get('/', 'RollController@index'
 Route::get('wodroll', 'RollController@roll'
 
 );
+
+Route::view('about', 'Diceroller/about');
