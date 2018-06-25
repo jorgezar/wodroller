@@ -2,7 +2,7 @@
     <head>
 	    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/wodroller.css') }}">
-        <title>App Name - @yield('title')</title>
+        <title>World of Darkness Dice Roller</title>
         <meta charset = "UTF-8">
     </head>
     <body>
