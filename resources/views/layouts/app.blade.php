@@ -1,6 +1,7 @@
 <html>
     <head>
 	    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/wodroller.css') }}">
         <title>World of Darkness Dice Roller</title>
         <meta charset = "UTF-8">
@@ -10,6 +11,10 @@
         <div class="container">
             @yield('content')
         </div>
+      <footer class="row">
+        @include('includes.footer')
+    	</footer>      
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
