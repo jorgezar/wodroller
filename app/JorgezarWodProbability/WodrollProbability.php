@@ -28,7 +28,7 @@ class WodrollProbability {
         $dicePool->addDiceToPool($this->diceSides, $this->diceNo);
         
         // call different procedures for exploding and regular rolls
-        if ( $this->explode == true ) {
+        if ( $this->explode == 'true' ) {
             for ($i = 0; $i < $this->rollsNo ; $i++) {
                 $this->results[] = $dicePool->explodingRoll();
             }
