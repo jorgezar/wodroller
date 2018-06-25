@@ -17,10 +17,10 @@ $(document).ready(function() {
             success: function(data){
             	var data = JSON.parse(data);
             	console.log('Request OK');
+                $('#results_label').removeClass('label_hidden');
+                drawGraph(data);
                 
-                var chart = drawGraph(data);
-                
-                $('#diceroller_results').html(chart);
+                //$('#diceroller_results').html(chart);
                 
             },
             error: function(data){
@@ -48,13 +48,10 @@ function drawGraph(data) {
 	  },
 		options: {
 		    maintainAspectRatio: false,
-		    title: {
-		    	display: true,
-		    	text: "Wyniki: ",
-		    	position: 'top',
-		    	fontSize: 20,
-		    	fontColor: 'black',
+		    legend: {
+		    	display: false
 		    }
+
 		}
 	});
 }
