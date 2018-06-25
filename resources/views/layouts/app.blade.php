@@ -1,6 +1,7 @@
 <html>
     <head>
 	    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/wodroller.css') }}">
         <title>App Name - @yield('title')</title>
         <meta charset = "UTF-8">
     </head>
@@ -16,5 +17,6 @@
     <script src="{{ asset('js/diceroller.js') }}"></script>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
     </body>
 </html>
