@@ -5,7 +5,7 @@
 @section('title', 'Page Title')
 
 @section('content')
-    <h1>Jorgezar World of Darkness Dice Roller</h1>
+    <h1>Jorgezar World of Darkness Dice Roller <a href="{{ url('about') }}" data-toggle="tooltip" title="Want to know more?"><i class="fa fa-question-circle" ></i></a></h1>
 
 {!! Form::open([
 	'url' => 'wodroll',
