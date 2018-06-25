@@ -1,0 +1,1 @@
+<div class = '' id = "footer-block">© Copyright 2018 Jerzy 'Jorgezar' Zaremba Śmietański</div>
