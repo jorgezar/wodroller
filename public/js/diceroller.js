@@ -28,6 +28,8 @@ $(document).ready(function() {
             
     })
 	
+    $('[data-toggle="tooltip"]').tooltip();
+    
 });      
 function drawGraph(data) {
 
