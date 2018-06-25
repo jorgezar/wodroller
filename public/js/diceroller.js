@@ -20,8 +20,6 @@ $(document).ready(function() {
                 $('#results_label').removeClass('label_hidden');
                 drawGraph(data);
                 
-                //$('#diceroller_results').html(chart);
-                
             },
             error: function(data){
             	console.log('Request ERROR');
